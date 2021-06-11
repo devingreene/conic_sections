@@ -1,42 +1,55 @@
 % vim: se spell tw=70:
 \documentclass[12pt]{article}
 
-\usepackage{fullpage}
-\usepackage{listings}
-\usepackage{color,xcolor}
 \usepackage{amsmath}
-\usepackage{graphicx}
-\usepackage{tikz}
 
-\renewcommand{\t}{\texttt}
-\newcommand{\bs}{\bigskip}
-\newcommand{\e}{\text{e}}
-\newcommand{\p}{\partial}
-\renewcommand{\d}[2]{\frac{d#1}{d#2}}
+%macros
+\newcommand{\eps}{\epsilon}
 
+\title{Conic sections are in fact conic sections}
+\author{Devin Greene}
+\date{}
 \begin{document}
+\maketitle
 
 In this article, I will show that every non-degenerate quadratic
 planar curve is congruent to the intersection of a plane in three
-dimensional space with the double-cone.  In what follows, when we are
-referring to objects in the plane, we use lower-case $x$ and $y$, and
-when referring to objects in space, we use upper-case $X$, $Y$, and
+dimensional space with the double-cone.  In what follows, when I 
+refer to objects in the plane, I use lower-case $x$ and $y$, and
+when referring to objects in space, I use upper-case $X$, $Y$, and
 $Z$.
 
-We know that via rotation, translation, or reflection in the plane, every
-quadratic planar curve has one of the following forms:
+A double-cone aligned with the coordinate axes has the form 
+
+\begin{equation} \label{canon} \eps_x X^2 + \eps_y Y^2 + \eps_z
+Z^3 = 0\end{equation}
+where
+$$\begin{matrix}(\eps_x,\eps_y,\eps_z) & \in  &
+\{ &(1,1,-1),&(1,-1,1),&(-1,1,1), &\\
+&&&(1,-1,-1),&(-1,1,-1),&(-1,-1,1) &\}\end{matrix}$$
+In each demonstration below, we will show that a curve is congruent to
+the intersection of the plane $Z = 1$ and a surface congruent to one
+of the forms (\ref{canon}).
+
+Note that the double-cone defined in (\ref{canon}) is invariant under
+uniform scaling by a factor.  Thus for each quadratic curve it
+suffices to prove our assertion for any {\it similar} curve.
+
+Begin by noting that via translation and orthogonal transformation on
+the plane, any non-degenerate quadratic curve can be written in one of
+the following ways:
 
 \begin{enumerate}
 \item {\it (ellipse)} $a^2x^2 + b^2y^2 - 1 = 0$,
-\item {\it (hyperbola)} $a^2x^2 - b^2y^2 - 1 = 0$, or
+\item {\it (hyperbola)} $-a^2x^2 + b^2y^2 - 1 = 0$, or
 \item {\it (parabola)} $y - a^2x^2 = 0$
 \end{enumerate}
-where $a,b$ are constants.
+where $a,b \neq 0$ are constants.
 
 \medskip
 
-\noindent {\it Case 1}: The double-cone is invariant under scaling uniformly along all three spatial axes, thus without loss of generality we may assume the
-equation has the form $x^2 + c^2 y^2 - 1/c^2 = 0$, where $|c| < 1$. \footnote{
+\noindent {\it Case 1}: As noted above, it suffices to prove this for
+any similar curve, thus\footnote{
 In the equation $a^2x^2 + b^2y^2 - 1 = 0$, if $a^2 < b^2$, then swap
 variables.  Let $c^2 = (b/a)^2$, then $x^2 + c^2 y^2 - 1/a^2 = 0$.
 Choose $\sigma$ such that $1/c^2 = 1/a^2\sigma^2$.  Then
@@ -44,7 +57,8 @@ $(\sigma x)^2
 + c^2 (\sigma y)^2 - 1/a^2 = 0 \implies x^2  + c^2 y^2 - 1/a^2\sigma^2
 = 0 \implies x^2 + c^2 y^2 - 1/c^2 = 0$
 }
-Translate the curve in the $y$ direction by $-t = -\sqrt{1/c^4 - 1}$,
+we may assume the
+equation has the form $x^2 + c^2 y^2 - 1/c^2 = 0$, where $|c| < 1$. Translate the curve in the $y$ direction by $-t = -\sqrt{1/c^4 - 1}$,
 obtaining $x^2 + c^2 (y + t)^2 - 1/c^2 = 0$.  This curve is congruent to
 the intersection of the surface $X^2 + c^2 (Y + tZ)^2 - Z^2/c^2 = 0$ and
 the plane $Z = 1$ in 3-space.  Hence it suffices to show that $ X^2 +
@@ -71,36 +85,36 @@ $$\left(
 0 & c^2 t& -c^2\\
 \end{matrix}
 \right)$$
-Thus the characteristic polynomial of the lower right submatrix is
+Thus the characteristic polynomial of the lower right sub-matrix is
 
 $$( x^2 - c^2)(x^2 + c^2) -  c^4 t^2 = x^2 - c^4(1 + t^2)$$
 which, again from the definition of $t$, is
 
 \begin{equation}\label{eigen} x^2  -1 = (x - 1)(x + 1)\end{equation}
-Since (\ref{form}) is symmetric, (\ref{eigen}) shows that  can thus
-diagonalize it via an orthogonal transformation to
+Since (\ref{form}) is symmetric, (\ref{eigen}) shows that (\ref{form}) is
+equivalent via orthogonal transformation to
 
 $$\left(\begin{matrix}1 & 0 & 0 \\
 0 & 1 & 0\\
 0 & 0 & -1\end{matrix}\right).$$
-Thus the equation of the surface is
+Thus the equation of the surface is congruent to
 $$X^2 + Y^2 - Z^2 = 0,$$
 which is a double cone.
 
 \medskip
 
-\noindent {\it Case 2:} This case is similar to Case 1 and is left as an
-exercise.
+\noindent {\it Case 2:} This case is similar to Case 1, ending in the
+double-cone $-X^2 + Y^2 - Z^2 = 0$.
 
 \medskip
 
-\noindent {\it Case 3:} First note that by scaling in both dimensions
+\noindent {\it Case 3:} First note that by scaling 
 we can eliminate the $a^2$ and introduce a factor of $2$.  Namely,
 $y/2a^2 - a^2(x/2a^2)^2  = 0\implies 2y
-- x^2 = 0$.  The curve is congruent to the intersection of
+- x^2 = 0$.  This curve is congruent to the intersection of
 the surface $2YZ - X^2 = 0$ and the plane $Z = 1$.  Hence it suffices
-to show that $2YZ - X^2 = 0$ is congruent to a double cone.  This is
-trivial as we simply take the orthogonal transformation on the
+to show that $2YZ - X^2 = 0$ is congruent to a double cone.  
+Here we simply take the orthogonal transformation on the
 $YZ$-plane
 
 $$\left(\begin{matrix}
