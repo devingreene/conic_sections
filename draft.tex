@@ -1,0 +1,120 @@
+% vim: se spell tw=70:
+\documentclass[12pt]{article}
+
+\usepackage{fullpage}
+\usepackage{listings}
+\usepackage{color,xcolor}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{tikz}
+
+\renewcommand{\t}{\texttt}
+\newcommand{\bs}{\bigskip}
+\newcommand{\e}{\text{e}}
+\newcommand{\p}{\partial}
+\renewcommand{\d}[2]{\frac{d#1}{d#2}}
+
+\begin{document}
+
+In this article, I will show that every non-degenerate quadratic
+planar curve is congruent to the intersection of a plane in three
+dimensional space with the double-cone.  In what follows, when we are
+referring to objects in the plane, we use lower-case $x$ and $y$, and
+when referring to objects in space, we use upper-case $X$, $Y$, and
+$Z$.
+
+We know that via rotation, translation, or reflection in the plane, every
+quadratic planar curve has one of the following forms:
+
+\begin{enumerate}
+\item {\it (ellipse)} $a^2x^2 + b^2y^2 - 1 = 0$,
+\item {\it (hyperbola)} $a^2x^2 - b^2y^2 - 1 = 0$, or
+\item {\it (parabola)} $y - a^2x^2 = 0$
+\end{enumerate}
+where $a,b$ are constants.
+
+\medskip
+
+\noindent {\it Case 1}: The double-cone is invariant under scaling uniformly along all three spatial axes, thus without loss of generality we may assume the
+equation has the form $x^2 + c^2 y^2 - 1/c^2 = 0$, where $|c| < 1$. \footnote{
+In the equation $a^2x^2 + b^2y^2 - 1 = 0$, if $a^2 < b^2$, then swap
+variables.  Let $c^2 = (b/a)^2$, then $x^2 + c^2 y^2 - 1/a^2 = 0$.
+Choose $\sigma$ such that $1/c^2 = 1/a^2\sigma^2$.  Then
+$(\sigma x)^2
++ c^2 (\sigma y)^2 - 1/a^2 = 0 \implies x^2  + c^2 y^2 - 1/a^2\sigma^2
+= 0 \implies x^2 + c^2 y^2 - 1/c^2 = 0$
+}
+Translate the curve in the $y$ direction by $-t = -\sqrt{1/c^4 - 1}$,
+obtaining $x^2 + c^2 (y + t)^2 - 1/c^2 = 0$.  This curve is congruent to
+the intersection of the surface $X^2 + c^2 (Y + tZ)^2 - Z^2/c^2 = 0$ and
+the plane $Z = 1$ in 3-space.  Hence it suffices to show that $ X^2 +
+c^2 (Y + tZ)^2 - Z^2/c^2 = 0$ is congruent to a double cone.
+
+To this end, expand the left-hand side to get
+
+$$X^2 + c^2 Y^2 + 2c^2t YZ - (1/c^2 - c^2t^2)Z^2$$
+This corresponds to the symmetric form given by the matrix 
+
+\begin{equation}\label{form}\left(
+\begin{matrix} 
+1 & 0 & 0 \\
+0 & c^2 & c^2t \\
+0 & c^2 t& -1/c^2 + c^2t^2\\
+\end{matrix}
+\right)
+\end{equation} 
+From the definition of $t$ above, this becomes
+$$\left(
+\begin{matrix}
+1 & 0 & 0 \\
+0 & c^2 & c^2 t\\
+0 & c^2 t& -c^2\\
+\end{matrix}
+\right)$$
+Thus the characteristic polynomial of the lower right submatrix is
+
+$$( x^2 - c^2)(x^2 + c^2) -  c^4 t^2 = x^2 - c^4(1 + t^2)$$
+which, again from the definition of $t$, is
+
+\begin{equation}\label{eigen} x^2  -1 = (x - 1)(x + 1)\end{equation}
+Since (\ref{form}) is symmetric, (\ref{eigen}) shows that  can thus
+diagonalize it via an orthogonal transformation to
+
+$$\left(\begin{matrix}1 & 0 & 0 \\
+0 & 1 & 0\\
+0 & 0 & -1\end{matrix}\right).$$
+Thus the equation of the surface is
+$$X^2 + Y^2 - Z^2 = 0,$$
+which is a double cone.
+
+\medskip
+
+\noindent {\it Case 2:} This case is similar to Case 1 and is left as an
+exercise.
+
+\medskip
+
+\noindent {\it Case 3:} First note that by scaling in both dimensions
+we can eliminate the $a^2$ and introduce a factor of $2$.  Namely,
+$y/2a^2 - a^2(x/2a^2)^2  = 0\implies 2y
+- x^2 = 0$.  The curve is congruent to the intersection of
+the surface $2YZ - X^2 = 0$ and the plane $Z = 1$.  Hence it suffices
+to show that $2YZ - X^2 = 0$ is congruent to a double cone.  This is
+trivial as we simply take the orthogonal transformation on the
+$YZ$-plane
+
+$$\left(\begin{matrix}
+Y\\
+Z\end{matrix}\right) \mapsto
+\left(\begin{matrix}
+\frac{1}{\sqrt{2}} & \frac{1}{\sqrt{2}} \\
+-\frac{1}{\sqrt{2}} & \frac{1}{\sqrt{2}}\end{matrix}
+\right) \left(\begin{matrix}
+Y\\Z\end{matrix}\right)$$
+which converts the term $2YZ$ to $Y^2 - Z^2$.  Hence the surface is
+congruent to 
+
+$$Y^2 - Z^2 - X^2 = 0$$
+which is a double-cone.
+
+\end{document}
