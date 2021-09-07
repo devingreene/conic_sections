@@ -58,7 +58,7 @@ $(\sigma x)^2
 = 0 \implies x^2 + c^2 y^2 - 1/c^2 = 0$
 }
 we may assume the
-equation has the form $x^2 + c^2 y^2 - 1/c^2 = 0$, where $|c| < 1$. Translate the curve in the $y$ direction by $-t = -\sqrt{1/c^4 - 1}$,
+equation has the form $x^2 + c^2 y^2 - 1/c^2 = 0$, where $|c| \leq 1$. Translate the curve in the $y$ direction by $-t = -\sqrt{1/c^4 - 1}$,
 obtaining $x^2 + c^2 (y + t)^2 - 1/c^2 = 0$.  This curve is congruent to
 the intersection of the surface $X^2 + c^2 (Y + tZ)^2 - Z^2/c^2 = 0$ and
 the plane $Z = 1$ in 3-space.  Hence it suffices to show that $ X^2 +
@@ -66,14 +66,14 @@ c^2 (Y + tZ)^2 - Z^2/c^2 = 0$ is congruent to a double cone.
 
 To this end, expand the left-hand side to get
 
-$$X^2 + c^2 Y^2 + 2c^2t YZ - (1/c^2 - c^2t^2)Z^2$$
+$$X^2 + c^2 Y^2 + 2c^2t YZ + (c^2t^2 - 1/c^2 )Z^2$$
 This corresponds to the symmetric form given by the matrix 
 
 \begin{equation}\label{form}\left(
 \begin{matrix} 
 1 & 0 & 0 \\
 0 & c^2 & c^2t \\
-0 & c^2 t& -1/c^2 + c^2t^2\\
+0 & c^2 t& c^2t^2 - 1/c^2 \\
 \end{matrix}
 \right)
 \end{equation} 
@@ -121,8 +121,8 @@ $$\left(\begin{matrix}
 Y\\
 Z\end{matrix}\right) \mapsto
 \left(\begin{matrix}
-\frac{1}{\sqrt{2}} & \frac{1}{\sqrt{2}} \\
--\frac{1}{\sqrt{2}} & \frac{1}{\sqrt{2}}\end{matrix}
+\frac{1}{\sqrt{2}} & -\frac{1}{\sqrt{2}} \\
+\frac{1}{\sqrt{2}} & \frac{1}{\sqrt{2}}\end{matrix}
 \right) \left(\begin{matrix}
 Y\\Z\end{matrix}\right)$$
 which converts the term $2YZ$ to $Y^2 - Z^2$.  Hence the surface is
