@@ -33,7 +33,7 @@ of the forms (\ref{canon}).
 
 Note that the double-cone defined in (\ref{canon}) is invariant under
 uniform scaling by a factor.  Thus for each quadratic curve it
-suffices to prove our assertion for any {\it similar} curve.
+suffices to prove our assertion for any similar curve.
 
 Begin by noting that via translation and orthogonal transformation on
 the plane, any non-degenerate quadratic curve can be written in one of
@@ -55,14 +55,15 @@ variables.  Let $c^2 = (b/a)^2$, then $x^2 + c^2 y^2 - 1/a^2 = 0$.
 Choose $\sigma$ such that $1/c^2 = 1/a^2\sigma^2$.  Then
 $(\sigma x)^2
 + c^2 (\sigma y)^2 - 1/a^2 = 0 \implies x^2  + c^2 y^2 - 1/a^2\sigma^2
-= 0 \implies x^2 + c^2 y^2 - 1/c^2 = 0$
+= 0 \implies x^2 + c^2 y^2 - 1/c^2 = 0$.
 }
-we may assume the
-equation has the form $x^2 + c^2 y^2 - 1/c^2 = 0$, where $|c| \leq 1$. Translate the curve in the $y$ direction by $-t = -\sqrt{1/c^4 - 1}$,
-obtaining $x^2 + c^2 (y + t)^2 - 1/c^2 = 0$.  This curve is congruent to
-the intersection of the surface $X^2 + c^2 (Y + tZ)^2 - Z^2/c^2 = 0$ and
-the plane $Z = 1$ in 3-space.  Hence it suffices to show that $ X^2 +
-c^2 (Y + tZ)^2 - Z^2/c^2 = 0$ is congruent to a double cone.
+we may assume the equation has the form $x^2 + c^2 y^2 - 1/c^2 = 0$,
+where $|c| \leq 1$.  Translate the curve along the $y$ axis by $t =
+\sqrt{1/c^4 - 1}$, obtaining $x^2 + c^2 (y + t)^2 - 1/c^2 = 0$.  This
+curve is congruent to the intersection of the surface $X^2 + c^2 (Y +
+tZ)^2 - Z^2/c^2 = 0$ and the plane $Z = 1$ in 3-space.  Hence it
+suffices to show that $ X^2 + c^2 (Y + tZ)^2 - Z^2/c^2 = 0$ is
+congruent to a double cone.
 
 To this end, expand the left-hand side to get
 
@@ -85,9 +86,9 @@ $$\left(
 0 & c^2 t& -c^2\\
 \end{matrix}
 \right)$$
-Thus the characteristic polynomial of the lower right sub-matrix is
+Thus the characteristic polynomial $p(\lambda)$ of the lower right sub-matrix is
 
-$$( x - c^2)(x + c^2) -  c^4 t^2 = x^2 - c^4(1 + t^2)$$
+$$( \lambda - c^2)(\lambda + c^2) -  c^4 t^2 = \lambda^2 - c^4(1 + t^2)$$
 which, again from the definition of $t$, is
 
 \begin{equation}\label{eigen} x^2  -1 = (x - 1)(x + 1)\end{equation}
