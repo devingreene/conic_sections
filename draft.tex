@@ -1,4 +1,4 @@
-% vim: se spell tw=70:
+% vim: spell tw=70:
 \documentclass[12pt]{article}
 
 \usepackage{amsmath}
@@ -6,7 +6,7 @@
 %macros
 \newcommand{\eps}{\epsilon}
 
-\title{Conic sections are in fact conic sections}
+\title{``Conic sections'' are in fact conic sections}
 \author{Devin Greene}
 \date{}
 \begin{document}
@@ -27,13 +27,15 @@ where
 $$\begin{matrix}(\eps_x,\eps_y,\eps_z) & \in  &
 \{ &(1,1,-1),&(1,-1,1),&(-1,1,1), &\\
 &&&(1,-1,-1),&(-1,1,-1),&(-1,-1,1) &\}\end{matrix}$$
-In each demonstration below, we will show that a curve is congruent to
-the intersection of the plane $Z = 1$ and a surface congruent to one
-of the forms (\ref{canon}).
-
 Note that the double-cone defined in (\ref{canon}) is invariant under
-uniform scaling by a factor.  Thus for each quadratic curve it
-suffices to prove our assertion for any similar curve.
+uniform scaling by a factor.  Thus, given a quadratic curve
+defined by equation $Q(x,y) = 0$, it follows that this curve
+intersects a double cone if and only if any translation ( $Q(x,y) = 0 \implies
+Q(x+x_0, y+y_0) = 0$ ) or similarity transformation \break ( $Q(x,y) =
+0\implies Q(\sigma x, \sigma y) = 0$ ) has the same property.  The
+strategy used in the proofs below consists of finding a convenient
+transformation of $Q(x,y) = 0$ which can be shown to be the
+intersection of a double cone with the plane $Z = 1$.
 
 Begin by noting that via translation and orthogonal transformation on
 the plane, any non-degenerate quadratic curve can be written in one of
@@ -49,16 +51,16 @@ where $a,b \neq 0$ are constants.
 \medskip
 
 \noindent {\it Case 1}: As noted above, it suffices to prove this for
-any similar curve, thus\footnote{
+any similar curve, thus
+we may assume the equation has the form $x^2 + c^2 y^2 - 1/c^2 = 0$,
+where $|c| \leq 1$.\footnote{
 In the equation $a^2x^2 + b^2y^2 - 1 = 0$, if $a^2 < b^2$, then swap
 variables.  Let $c^2 = (b/a)^2$, then $x^2 + c^2 y^2 - 1/a^2 = 0$.
 Choose $\sigma$ such that $1/c^2 = 1/a^2\sigma^2$.  Then
 $(\sigma x)^2
 + c^2 (\sigma y)^2 - 1/a^2 = 0 \implies x^2  + c^2 y^2 - 1/a^2\sigma^2
 = 0 \implies x^2 + c^2 y^2 - 1/c^2 = 0$.
-}
-we may assume the equation has the form $x^2 + c^2 y^2 - 1/c^2 = 0$,
-where $|c| \leq 1$.  Translate the curve along the $y$ axis by $t =
+}  Translate the curve along the $y$ axis by $t =
 \sqrt{1/c^4 - 1}$, obtaining $x^2 + c^2 (y + t)^2 - 1/c^2 = 0$.  This
 curve is congruent to the intersection of the surface $X^2 + c^2 (Y +
 tZ)^2 - Z^2/c^2 = 0$ and the plane $Z = 1$ in 3-space.  Hence it
